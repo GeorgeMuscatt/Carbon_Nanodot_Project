@@ -1,14 +1,20 @@
-# Install Software -------------------------------
-source("http://bioconductor.org/biocLite.R")
-biocLite("flowCore")
+## Install Software -------------------------------
+# source("http://bioconductor.org/biocLite.R")
+# biocLite("flowCore")
+##
 
-# Load Libraries ---------------------------------
+## Initialise R: ##
+
+## Load Libraries ---------------------------------
 library(flowCore)
 library(tidyverse)
 library(mclust) 
 
 # Set the working directory ----------------------
-setwd("~/Desktop/Project/R_Script_Full_Time_Series/R_Script_Full_Time_Series")
+setwd("~/Documents/Data/Scripts/Intelligate")
+
+
+## Import and pre-process data: ##
 
 # Load FlowFrames from file into FlowSet ---------
 fs <- read.flowSet(path = "~/Desktop/Project/R_Script_Full_Time_Series/R_Script_Full_Time_Series", pattern = ".fcs", alter.names = TRUE, phenoData = list(name = "SAMPLE ID", Filename = "$FIL"))
